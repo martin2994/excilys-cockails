@@ -6,19 +6,28 @@ import {CommonModule} from '@angular/common';
 import {CustomMaterialModule} from '../custom-material/custom-material.module';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import {RouterModule} from '@angular/router';
+import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { OrderByPipe } from './order-by.pipe';
+import { RecipeUpdateComponent } from './recipe-update/recipe-update.component';
 
 @NgModule({
 
   imports: [
     CommonModule,
     CustomMaterialModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     StringToArrayPipe,
     RecipeComponent,
     RecipesComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    RecipeCreateComponent,
+    OrderByPipe,
+    RecipeUpdateComponent
   ],
 
 })

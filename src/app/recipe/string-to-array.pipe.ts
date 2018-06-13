@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class StringToArrayPipe implements PipeTransform {
 
-  transform(value: string, args?: any): String[] {
+  transform(value: string): String[] {
       return value !== null ? value.split('\\n') : ['none'];
   }
 

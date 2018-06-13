@@ -5,14 +5,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import {HttpClientModule} from '@angular/common/http';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import {RecipeModule} from './recipe/recipe.module';
 import {CustomMaterialModule} from './custom-material/custom-material.module';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

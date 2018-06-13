@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Recipe} from './recipe.model';
+import {RecipeService} from './recipe.service';
 
 @Component({
   selector: 'app-recipe',
@@ -9,8 +10,16 @@ import {Recipe} from './recipe.model';
 export class RecipeComponent implements OnInit {
   @Input()
   recipe: Recipe;
-  constructor() { }
+
+  @Output()
+  deleteEvent: EventEmitter<Recipe> = new EventEmitter();
+
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+  }
+
+  deleteRecipe() {
+    this.recipeService.deleteRecipe(this.recipe.id).subscribe(() => this.deleteEvent.emit(this.recipe));
   }
 }

@@ -1,0 +1,21 @@
+<div class="container" [@listAnimation]>
+<mat-card class="example-card">
+   <mat-card-header>
+     <mat-card-title>Create a new recipe</mat-card-title>
+   </mat-card-header>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Name" [(ngModel)]="nameRecipe">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Image URL" [(ngModel)]="url">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Description" [(ngModel)]="description"></textarea>
+    </mat-form-field>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addRecipe()">Add</button>
+  </mat-card-actions>
+ </mat-card>
+</div>

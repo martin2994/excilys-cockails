@@ -1,3 +1,8 @@
-<div class="container">
-  <app-recipe *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe>
+<button style="margin-top: 8px; margin-left: 8px" mat-raised-button color="primary" (click)="order()" [ngPlural]="orderType">
+  <ng-template ngPluralCase="=false">A-Z Order</ng-template>
+  <ng-template ngPluralCase="=true">Z-A Order</ng-template>
+</button>
+<div class="container" *ngIf="recipes" [@listAnimation]>
+  <app-recipe *ngFor="let recipe of recipes | orderBy: orderType; let index= index" [recipe]="recipe" (deleteEvent)="delete($event)" class="anim_{{index%4}}"></app-recipe>
 </div>
+

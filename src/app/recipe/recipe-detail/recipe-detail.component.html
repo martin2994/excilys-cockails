@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="recipe">
   <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image">
@@ -27,6 +27,9 @@
     <button mat-raised-button color="primary" (click)="toggleExpand()" [ngPlural]="expandInfo">
       <ng-template ngPluralCase="=false">Show more</ng-template>
       <ng-template ngPluralCase="=true">Show less</ng-template>
+    </button>
+    <button style="margin-top: 8px; margin-left: 8px" mat-raised-button color="primary" routerLink="/recipe/{{recipe.id}}/update">
+      Update
     </button>
   </mat-card-actions>
 </mat-card>
